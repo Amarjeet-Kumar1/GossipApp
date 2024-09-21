@@ -10,6 +10,14 @@
     height: 100vh;
     width: 35%;
   }
+  // mobile
+  @media screen and (max-width: 641px) {
+    height: 100%;
+    width: 100%;
+    &.chatActive {
+      width: 0%;
+    }
+  }
 }
 
 .chatsContainer {

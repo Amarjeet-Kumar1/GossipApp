@@ -2,12 +2,14 @@ import s from "./chatContainerHeader.module.scss"
 import { formatTime } from "../../../../utils/formatTime"
 import { useContext } from "react"
 import { Context } from "../../../../contexts/Context"
+import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 import { initCallMiddleware } from "../../../../utils/contextMiddleware/callerInfo"
 
 export const ChatContainerHead = () => {
   const {
     chat,
     activeChat,
+    setActiveChat,
     setChatContainerModal,
     auth,
     authUsers,
@@ -47,8 +49,20 @@ export const ChatContainerHead = () => {
     })
   }
 
+  const close = () => {
+    setActiveChat({ switchTo: null })
+  }
+
   return (
     <div className={s.chatContainerHead}>
+      <ArrowBackIcon
+        style={{
+          cursor: "pointer",
+          display: "none",
+        }}
+        className={s.backIcon}
+        onClick={close}
+      />
       <div
         onClick={() =>
           setChatContainerModal({

@@ -9,7 +9,7 @@ import { ChatType } from "../../contexts/types"
 import { Search } from "../../widgets/search/Search"
 
 export const Sidebar = () => {
-  const { chatLoading, chat, auth, authUsers } = useContext(Context)
+  const { chatLoading, chat, auth, authUsers, activeChat } = useContext(Context)
   const [searchValue, setSearchValue] = useState("")
 
   const filterChats = (data: ChatType) => {
@@ -29,7 +29,7 @@ export const Sidebar = () => {
       : true
   }
   return (
-    <div className={s.sidebar}>
+    <div className={`${s.sidebar} ${activeChat ? s.chatActive : ""}`}>
       <SidebarModal />
       <SidebarHead />
       <Search searchValue={searchValue} setSearchValue={setSearchValue} />

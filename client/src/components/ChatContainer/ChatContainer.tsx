@@ -11,7 +11,7 @@ import { Context } from "../../contexts/Context"
 export const ChatContainer = () => {
   const { chatContainerModal, activeChat } = useContext(Context)
   return (
-    <div className={s.chatContainer}>
+    <div className={`${s.chatContainer} ${activeChat ? s.active : ""}`}>
       {activeChat ? (
         <div className={s.chatMain}>
           <AttachmentModal />
