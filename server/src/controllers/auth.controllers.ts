@@ -72,6 +72,7 @@ const googlelogin = async (req: Request, res: Response) => {
       res.cookie("GossipApp_RTN", refreshToken, {
         maxAge: refreshTokenExp,
         httpOnly: true,
+        secure: true,
         sameSite: "none",
       })
 
@@ -103,6 +104,7 @@ const googlelogin = async (req: Request, res: Response) => {
       res.cookie("GossipApp_RTN", refreshToken, {
         maxAge: refreshTokenExp,
         httpOnly: true,
+        secure: true,
         sameSite: "none",
       })
 
@@ -146,6 +148,7 @@ const sendRefreshToken = async (req: Request, res: Response) => {
     res.cookie("GossipApp_RTN", newRefreshToken, {
       maxAge: refreshTokenExp,
       httpOnly: true,
+      secure: true,
       sameSite: "none",
     })
 
