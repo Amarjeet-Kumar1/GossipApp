@@ -3,8 +3,8 @@ const port = process.env.PORT || 8080
 const cluster = require("cluster")
 const { createClient } = require("redis")
 const { createAdapter } = require("@socket.io/redis-adapter")
-const num_processes = require("os").cpus().length
-// const num_processes = 2
+// const num_processes = require("os").cpus().length
+const num_processes = 2
 import net from "net"
 import cors from "cors"
 import http from "http"
