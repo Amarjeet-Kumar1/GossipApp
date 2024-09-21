@@ -7,6 +7,7 @@ import express from "express"
 import socket from "socket.io"
 import cookieParser from "cookie-parser"
 import morgan from "morgan"
+import path from "path"
 
 import { socketMain } from "./socket.io/socketMain"
 import { initializeMongoDb } from "./database/mongoInstance"
@@ -30,7 +31,12 @@ import router from "./routes"
 
   await PeerServer({ port: 9000, path: "/peer-server" })
 
-  app.use("/", router)
+  app.use("/api", router)
+
+  app.use(express.static(path.join(__dirname, "..", "..", "client/dist")))
+  app.get("*", (req, res) =>
+    res.sendFile(path.join(__dirname, "..", "..", "client/dist/index.html"))
+  )
 
   const server = http.createServer(app)
 
