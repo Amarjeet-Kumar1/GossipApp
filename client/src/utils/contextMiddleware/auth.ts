@@ -7,6 +7,7 @@ import { SERVER_URL } from "../../api/api"
 export const initiateSigninMiddleware = async ({ payload, context }: any) => {
   const { setSocketConnectionSuccess } = context
   const userData = await googleSignin(payload)
+  alert("ok")
   setAccessToken(userData.accessToken)
   const initializedSocket = new SocketIO(
     SERVER_URL as string,
