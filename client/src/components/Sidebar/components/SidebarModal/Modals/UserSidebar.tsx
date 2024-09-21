@@ -162,7 +162,7 @@ export const UserSidebar = () => {
           />
           {auth?.authType !== "guest" ? (
             <div className={s.editNameButton}>
-              {editName && <small>{25 - newName?.length ?? 0}</small>}
+              {editName && <small>{25 - newName?.length}</small>}
               {editName ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

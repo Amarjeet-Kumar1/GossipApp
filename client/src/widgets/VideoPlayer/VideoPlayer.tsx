@@ -132,7 +132,7 @@ export const VideoPlayer = ({ src }: any) => {
       <video
         ref={videoRef}
         src={src}
-        onEnded={(e) => setPlay(false)}
+        onEnded={() => setPlay(false)}
         onDurationChange={(e) => loadDuration(e.target)}
       />
     </div>

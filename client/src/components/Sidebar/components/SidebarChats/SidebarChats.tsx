@@ -30,7 +30,7 @@ export const SidebarChats = ({ data }: any) => {
 
     setActiveChat(payload)
 
-    setActiveChatMiddleware({ payload })
+    setActiveChatMiddleware()
   }
 
   const otherFriend =

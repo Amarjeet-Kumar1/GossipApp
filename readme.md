@@ -16,7 +16,6 @@ Create a .env file inside of client and server folders respectively:
 **- client/.env**
 
 ```
-VITE_GAUTH_CLIENT_ID=<Your_gauth_client_id>
 VITE_SERVER_URL=http://localhost:8080
 VITE_PEER_SERVER_URL=http://localhost:9000
 VITE_FRONTEND_URL=http://localhost:5173
@@ -30,7 +29,6 @@ MONGO_USERNAME=<your_mongo_username>
 
 GAUTH_CLIENT_ID=<Your_gauth_client_id>
 GAUTH_CLIENT_SECRET=<Your_gauth_client_secret>
-GAUTH_REDIRECT_URL="http://localhost:5173"
 
 
 JWT_REFRESH_SECRET=<Your_jwt_refresh_secret>
@@ -44,8 +42,7 @@ CLOUDINARY_SECRET=<Your_cloudinary_secret>
 FRONTEND_URL="http://localhost:5173"
 REDIS_URL=<Your_redis_url>
 
-REST_PORT=8080
-PEER_PORT=9000
+PORT=8080
 ```
 
 ## Installation:

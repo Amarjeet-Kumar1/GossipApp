@@ -77,7 +77,7 @@ export class SocketIO {
         this.context.othersCalling(payload)
       })
 
-      this.socket.on("incomingCallCanceledByOther", (payload: any) => {
+      this.socket.on("incomingCallCanceledByOther", () => {
         this.context.othersCalling(null)
       })
 
@@ -96,7 +96,7 @@ export class SocketIO {
       // });
 
       // Socket Disconnected
-      this.socket?.on("multipleSession", (payload: any) => {
+      this.socket?.on("multipleSession", () => {
         this.context.setGlobalModal({
           type: "multipleSession",
           params: {},
@@ -108,7 +108,7 @@ export class SocketIO {
       })
 
       // Socket Disconnected
-      this.socket?.on("disconnect", (payload: any) => {
+      this.socket?.on("disconnect", () => {
         this.context.socketDisconnected()
       })
     })

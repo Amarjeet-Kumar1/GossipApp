@@ -7,7 +7,6 @@ import { Context } from "../../../../contexts/Context"
 
 export const MyVideo = ({ setVideos }: any) => {
   const {
-    globalModal,
     roomModal: room,
     newConnection,
     micStatus,
@@ -23,7 +22,7 @@ export const MyVideo = ({ setVideos }: any) => {
 
   useEffect(() => {
     setLoading(true)
-    const peer = new Peer(undefined, {
+    const peer = new Peer("", {
       host: `${import.meta.env.VITE_PEER_SERVER_URL?.split(":")[1].slice(2)}`,
       port: parseInt(`${import.meta.env.VITE_PEER_SERVER_URL?.split(":")[2]}`),
       path: "/peer-server",
@@ -42,7 +41,7 @@ export const MyVideo = ({ setVideos }: any) => {
         myVideoRef.current.play()
         if (!room.acceptedCall)
           getActiveSocket().emit("callOtherUser", room.extraParam)
-        peer.on("call", (call: Peer.MediaConnection) => {
+        peer.on("call", (call: any) => {
           // Answer for that call will be our stream
           call.answer(stream)
           // When we recieve their streamlk

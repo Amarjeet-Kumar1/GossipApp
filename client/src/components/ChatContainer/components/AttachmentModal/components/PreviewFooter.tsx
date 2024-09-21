@@ -27,36 +27,6 @@ export const PreviewFooter = ({ closeAttachmentModal }: any) => {
   const sliderRef: any = useRef(null)
   const mainRef: any = useRef(null)
 
-  const handleLeft = () => {
-    const px = (fileInPreview - 1) * 64
-    sliderRef.current.scroll({
-      left: px,
-      behavior: "smooth",
-    })
-    changeFileInPreview((prev: number) => (prev === 0 ? 0 : prev - 1))
-  }
-
-  const handleRight = () => {
-    changeFileInPreview((prev: number) => prev + 1)
-    const px = (fileInPreview + 1) * 64
-    sliderRef.current.scroll({
-      left: px,
-      behavior: "smooth",
-    })
-  }
-
-  const handleKeyPress = (e: any) => {
-    switch (e.keyCode) {
-      case 37:
-        handleLeft()
-        break
-      case 39:
-        handleRight()
-        break
-    }
-    return
-  }
-
   const scrollTo = (index: number) => {
     const px = index * 64
     sliderRef.current.scroll({

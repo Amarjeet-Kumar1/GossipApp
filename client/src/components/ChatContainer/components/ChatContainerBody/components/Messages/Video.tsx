@@ -26,7 +26,6 @@ export const Video = ({
   stillSending,
 }: any) => {
   const {
-    movableModal,
     setMovableModal,
     setGlobalModal,
     setGlobalMsgInFocus,

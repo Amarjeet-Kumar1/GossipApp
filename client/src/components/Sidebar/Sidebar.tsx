@@ -39,7 +39,7 @@ export const Sidebar = () => {
               return <SidebarChatSkeletons key={e} />
             })
           : Object.entries(chat)
-              .filter(([id, data]) => filterChats(data))
+              .filter(([, data]) => filterChats(data))
               .map(([id, data]: any) => {
                 return <SidebarChats key={id} data={data} />
               })}

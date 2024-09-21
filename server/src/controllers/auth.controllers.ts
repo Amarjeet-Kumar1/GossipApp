@@ -18,7 +18,7 @@ import { COLLECTION } from "../utils/collections.enum"
 const client = new OAuth2Client(
   process.env.GAUTH_CLIENT_ID,
   process.env.GAUTH_CLIENT_SECRET,
-  process.env.GAUTH_REDIRECT_URL
+  process.env.FRONTEND_URL
 )
 
 const getOauthURI = async (req: Request, res: Response) => {

@@ -1,5 +1,0 @@
-const chatTypes = {
-    textMsg: {
-        component: "",
-    },
-};

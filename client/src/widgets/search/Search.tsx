@@ -9,7 +9,7 @@ export const Search = ({
   searchValue: string
   setSearchValue: React.Dispatch<React.SetStateAction<string>>
 }) => {
-  const [loading, setLoading] = useState(false)
+  const [loading] = useState(false)
 
   return (
     <div className={s.search}>

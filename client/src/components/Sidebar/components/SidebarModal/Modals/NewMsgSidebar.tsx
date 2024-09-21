@@ -36,7 +36,7 @@ export const NewMsgSidebar = ({ closeModal }: any) => {
       }
       setActiveChat(payload)
 
-      setActiveChatMiddleware({ payload })
+      setActiveChatMiddleware()
       closeModal()
     } else {
       createNewChat({

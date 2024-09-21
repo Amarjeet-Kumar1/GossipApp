@@ -1,11 +1,10 @@
 require("dotenv").config()
-const port = process.env.REST_PORT || 8080
+const port = process.env.PORT || 8080
 const cluster = require("cluster")
 const { createClient } = require("redis")
 const { createAdapter } = require("@socket.io/redis-adapter")
-// const io_redis = require("socket.io-redis")
-// const num_processes = require("os").cpus().length;
-const num_processes = 2
+const num_processes = require("os").cpus().length
+// const num_processes = 2
 import net from "net"
 import cors from "cors"
 import http from "http"
@@ -108,7 +107,6 @@ import router from "./routes"
     // server is assumed to be on localhost:6379. You don't have to
     // specify them explicitly unless you want to change them.
     // redis-cli monitor
-    // io.adapter(io_redis({ host: "localhost", port: 6379 }))
     const pubClient = createClient({ url: process.env.REDIS_URL })
     const subClient = pubClient.duplicate()
 

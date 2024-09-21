@@ -5,15 +5,8 @@ import { Context } from "../../../../../../../../contexts/Context"
 import { setActiveChatMiddleware } from "../../../../../../../../utils/contextMiddleware/chat"
 
 export const ParticipantSection = ({ onClose }: any) => {
-  const {
-    chat,
-    activeChat,
-    authUsers,
-    auth,
-    setActiveChat,
-    createNewChat,
-    setSidebarModal,
-  } = useContext(Context)
+  const { chat, activeChat, authUsers, auth, setActiveChat, createNewChat } =
+    useContext(Context)
   const handleOnClick = (data: any) => {
     const doesChatExist: any = Object.entries(chat).find((chat: any) => {
       const refChat = chat[1].chatInfo
@@ -36,7 +29,7 @@ export const ParticipantSection = ({ onClose }: any) => {
       }
       setActiveChat(payload)
 
-      setActiveChatMiddleware({ payload })
+      setActiveChatMiddleware()
     } else {
       createNewChat({
         participants: [

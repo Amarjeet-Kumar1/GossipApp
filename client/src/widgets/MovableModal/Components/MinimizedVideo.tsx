@@ -170,7 +170,7 @@ export const MinimizedVideo = ({ params }: any) => {
         }}
         ref={videoRef}
         src={params.url}
-        onEnded={(e) => setPlay(false)}
+        onEnded={() => setPlay(false)}
         onDurationChange={(e) => loadDuration(e.target)}
         onLoadedData={(e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
           setVidLoaded(true)

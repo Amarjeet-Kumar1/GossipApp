@@ -23,7 +23,7 @@ export const getInitialChatsMiddleware = async ({
 }: any) => {
   const _all = await getInitialChatData()
   const chats = await getAllMessages(_all)
-  const chatsObj = chats.reduce((result: any, item: any, index: number) => {
+  const chatsObj = chats.reduce((result: any, item: any) => {
     result[item[0]._id] = {
       chatInfo: item[0],
       messages: item[1],
@@ -66,7 +66,7 @@ export const sendMsgStartMiddleware = async ({
   }
 }
 
-export const setActiveChatMiddleware = ({ payload }: any) => {
+export const setActiveChatMiddleware = () => {
   // getActiveSocket().emit("switchActiveChat", payload)
 }
 
