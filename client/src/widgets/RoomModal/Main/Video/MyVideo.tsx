@@ -23,9 +23,9 @@ export const MyVideo = ({ setVideos }: any) => {
   useEffect(() => {
     setLoading(true)
     const peer = new Peer("", {
-      host: `${import.meta.env.VITE_PEER_SERVER_URL?.split(":")[1].slice(2)}`,
-      port: parseInt(`${import.meta.env.VITE_PEER_SERVER_URL?.split(":")[2]}`),
+      host: import.meta.env.VITE_PEER_URL,
       path: "/peer-server",
+      port: import.meta.env.VITE_PORT,
     })
 
     peerConnectionRef.current = peer

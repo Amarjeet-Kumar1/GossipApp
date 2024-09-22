@@ -17,8 +17,9 @@ Create a .env file inside of client and server folders respectively:
 
 ```
 VITE_SERVER_URL=http://localhost:8080
-VITE_PEER_SERVER_URL=http://localhost:9000
 VITE_FRONTEND_URL=http://localhost:5173
+VITE_PEER_URL=localhost
+VITE_PORT=8080
 ```
 
 **- server/.env**
