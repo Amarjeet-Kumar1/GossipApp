@@ -15,6 +15,7 @@ import { SERVER_URL } from "./api/api"
 import { GlobalModal } from "./widgets/GlobalModal/GlobalModal"
 //@ts-ignore
 import LegendaryCursor from "legendary-cursor"
+import { askNotificationPermission } from "./utils/notification"
 
 const App = () => {
   const context = useContext(Context)
@@ -25,6 +26,7 @@ const App = () => {
     LegendaryCursor.init({
       lineSize: 0.02,
     })
+    askNotificationPermission()
     ;(async () => {
       try {
         await refreshToken()

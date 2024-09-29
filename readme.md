@@ -2,12 +2,13 @@
 
 <img src="https://github.com/Amarjeet-Kumar1/GossipApp/blob/main/screenshots/chat.png" width="100%">
 
-A complete realtime messaging web app (Mobile responsive) with video call feature using React Js as the front end and Node Js as the back end, MongoDB as the database and Cloudinary as data storage.
+A complete realtime messaging web app and desktop app (Mobile responsive) with video call feature and notification feature using React Js as the front end and Node Js as the back end, MongoDB as the database and Cloudinary as data storage.
 
 ## **Used Technologies:**<br/>
 
 a) **Front End**: React Js, Axios, Socket Client, Peer JS, React Spring.<br/>
-b) **Back End**: Node Js, Redis, Cluster, Socket.io, Mongo DB, Peer and Express, Cloudinary.
+b) **Back End**: Node Js, Redis, Cluster, Socket.io, Mongo DB, Peer and Express, Cloudinary.<br/>
+c) **Desktop App**: ElectronJs.
 
 ### Initial Setup:
 

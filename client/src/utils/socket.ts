@@ -2,6 +2,7 @@ import io, { Socket } from "socket.io-client"
 import { setActiveSocket } from "../config/globalSocket"
 import { InitialState } from "../contexts/types"
 import { getInitialChatsMiddleware } from "./contextMiddleware/chat"
+import { sendNotification } from "./notification"
 
 export class SocketIO {
   private socket: Socket
@@ -63,6 +64,13 @@ export class SocketIO {
 
       this.socket.on("recieveMessage", (payload: any) => {
         this.context.recieveMessage(payload)
+        sendNotification({
+          type: "Message",
+          content:
+            payload?.msgType === "text"
+              ? payload?.msgParams?.text
+              : "new message",
+        })
       })
 
       this.socket.on("onOtherAuthUsersInfoUpdate", (payload: any) => {
@@ -75,6 +83,10 @@ export class SocketIO {
 
       this.socket.on("incomingCall", (payload: any) => {
         this.context.othersCalling(payload)
+        sendNotification({
+          type: "Call",
+          content: `Call from ${payload?.displayName}`,
+        })
       })
 
       this.socket.on("incomingCallCanceledByOther", () => {

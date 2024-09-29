@@ -67,7 +67,7 @@ import router from "./routes"
       })
     )
 
-    app.use("/", router)
+    app.use("/api", router)
 
     const server: http.Server = app.listen(0, "localhost")
     logger.info("Worker listening...")
