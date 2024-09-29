@@ -1,32 +1,57 @@
-const { FusesPlugin } = require('@electron-forge/plugin-fuses');
-const { FuseV1Options, FuseVersion } = require('@electron/fuses');
+const { FusesPlugin } = require("@electron-forge/plugin-fuses")
+const { FuseV1Options, FuseVersion } = require("@electron/fuses")
 
 module.exports = {
   packagerConfig: {
     asar: true,
+    arch: "x64",
   },
   rebuildConfig: {},
+  publishers: [
+    {
+      name: "@electron-forge/publisher-github",
+      config: {
+        repository: {
+          owner: "Amarjeet-Kumar1",
+          name: "GossipApp",
+        },
+      },
+    },
+  ],
   makers: [
     {
-      name: '@electron-forge/maker-squirrel',
-      config: {},
+      name: "@electron-forge/maker-squirrel",
+      platforms: ["win32"],
+      config: {
+        name: "GossipApp",
+        arch: "x64",
+      },
     },
     {
-      name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
+      name: "@electron-forge/maker-zip",
+      platforms: ["darwin", "linux"],
+      config: {
+        name: "GossipApp",
+      },
     },
     {
-      name: '@electron-forge/maker-deb',
-      config: {},
+      name: "@electron-forge/maker-deb",
+      platforms: ["linux"],
+      config: {
+        name: "GossipApp",
+      },
     },
     {
-      name: '@electron-forge/maker-rpm',
-      config: {},
+      name: "@electron-forge/maker-rpm",
+      platforms: ["linux"],
+      config: {
+        name: "GossipApp",
+      },
     },
   ],
   plugins: [
     {
-      name: '@electron-forge/plugin-auto-unpack-natives',
+      name: "@electron-forge/plugin-auto-unpack-natives",
       config: {},
     },
     // Fuses are used to enable/disable various Electron functionality
@@ -41,4 +66,4 @@ module.exports = {
       [FuseV1Options.OnlyLoadAppFromAsar]: true,
     }),
   ],
-};
+}

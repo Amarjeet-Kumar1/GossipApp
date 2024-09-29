@@ -9,21 +9,6 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish"
   },
-  "config": {
-    "forge": {
-      "publishers": [
-        {
-          "name": "@electron-forge/publisher-github",
-          "config": {
-            "repository": {
-              "owner": "Amarjeet-Kumar1",
-              "name": "GossipApp"
-            }
-          }
-        }
-      ]
-    }
-  },
   "author": "Amarjeet Kumar",
   "license": "ISC",
   "devDependencies": {
