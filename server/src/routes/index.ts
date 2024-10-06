@@ -1,6 +1,7 @@
 import express from "express"
 import authRouter from "./auth.routes"
 import chatRouter from "./chat.routes"
+import mobileAuthRouter from "./mobileAuth.routes"
 
 const router: express.Router = express.Router()
 
@@ -12,6 +13,7 @@ router.get("/", (_: any, res: any) => {
 })
 
 router.use("/auth", authRouter)
+router.use("/auth/mobile", mobileAuthRouter)
 router.use("/chats", chatRouter)
 
 export default router
